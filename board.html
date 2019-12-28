@@ -1,11 +1,85 @@
-<!DOCTYPE html>
-<div class = container>
-    <!--headers-->
+
+
+<head>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+        body {
+            background-color:dodgerblue;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+            }
+
+        .container {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header {
+            margin-top: 50px;
+        }
+
+        .controls {
+            margin-top: 40px;
+        }
+
+        .checkBox {
+            margin-left: 40px;
+        }
+
+        .boardContainer {
+            margin-top: 40px;
+        }
+
+        .row {
+            font-size: 0px;
+        }
+        .row > div {
+            display: inline-block;
+            font-size: 100px;
+            border: solid 1px white;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: top;
+            line-height: 100px;
+        }   
+    </style>
+</head>
+
+<div class="container">
+    <!-- header -->
     <div class="header">
-
+      <h1>Tic Tac Nope</h1>
     </div>
-    <!--controls section-->
+    <!-- controls-->
     <div class="controls">
-
+      <h3>You're playing against the computer. Choose X or O</h3>
+      <form action="#">
+        <input class="checkBox" type="checkbox" name="xPlayer" value="X">X Player
+        <input class="checkBox" type="checkbox" name="oPlayer" value="O">O Player      
+      </form>
     </div>
-</div>
+
+    <!-- board container -->
+    <div class="boardContainer">
+      <!-- first row -->
+      <div class="row">
+        <div id="0" class="square bottom right"></div>
+        <div id="1" class="square bottom right"></div>
+        <div id="2" class="square bottom"></div>   
+    </div>
+      
+      <!-- second row -->
+      <div class="row">
+        <div id="3" class="square bottom right"></div>
+        <div id="4" class="square bottom right"></div>
+        <div id="5" class="square bottom"></div>   
+    </div>
+      
+      <!-- third row -->
+      <div class="row">
+        <div id="6" class="square right"></div>
+        <div id="7" class="square right"></div>
+        <div id="8" class="square"></div>   
+    </div>  
+  </div>
