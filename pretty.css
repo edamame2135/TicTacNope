@@ -1,0 +1,40 @@
+body {
+    background-color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header {
+    margin-top: 50px;
+}
+
+.controls {
+    margin-top: 40px;
+}
+
+.checkBox {
+    margin-left: 40px;
+}
+
+.boardContainer {
+    margin-top: 40px;
+}
+
+.row {
+    font-size: 0px;
+}
+.row > div {
+    display: inline-block;
+    font-size: 100px;
+    border: solid 1px white;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: top;
+    line-height: 100px;
+}
