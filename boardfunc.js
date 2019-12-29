@@ -1,6 +1,5 @@
 var board;
-
-const player = 'X';
+const huplayer = 'X';
 const ai = '0';
 const winCombos = [
     [0, 1, 2],
@@ -27,7 +26,7 @@ function startGame() {
 }
 
 function turnClick(square) {
-    console.log(square.target.id);
+    turn(square.target.id, huplayer);
 }
 
 function turn(sqaureId, player) {
@@ -52,7 +51,7 @@ function checkWin(board, player) {
 function gameOver(gameWon) {
     for (let index of winCombos[gameWon.index]) {
         document.getElementById(index).style.backgroundColor =
-            gameWon.player == player ? "blue" : "red";
+            gameWon.player == huplayer ? "blue" : "red";
     }
     for (var i = 0; i < cells.length; i++) {
         cells[i].removeEventListener('click', turnClick. false);
