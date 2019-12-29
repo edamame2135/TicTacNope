@@ -1,8 +1,4 @@
-var board= [
-    ["","",""],
-    ["","",""],
-    ["","",""]
-]
+var board;
 
 const player = 'X';
 const ai = '0';
@@ -33,23 +29,33 @@ function startGame() {
 function turnClick(square) {
     console.log(square.target.id);
 }
-/*var turn, sqrId, user, computer, row, col;
 
-$(document).ready(function() {
-    //checkbox event listener
-    $(",checkBox").click(function(){
-        if($(this).is(":checked")) {
-            user = $(this).val();
-            turn = user;
-            computer = (user == 'X') ? 'O' : 'X';
+function turn(sqaureId, player) {
+    board[squareId] = player;
+    document.getElementById(squareId).innerText = player;
+    let gameWon = checkWin(board, player)
+    if (gameWon) gameOver(gameWon)
+}
+
+function checkWin(board, player) {
+    let plays = board.reduce((a, e, i) => (e === player) ? a.concat(i) : a, []);
+    let gameWon = null;
+    for (let [index, win] of winCombos.entries()) {
+        if(win.every(elem => plays.indexOf(elem) > -1)) {
+            gameWon = {index: index, player: player};
+            break;
         }
-    });
-    //square event listener
+    }
+    return gameWon;
+}
 
-    $(".square").click(function() {
-        sqrId = $(this).attr("id");
-        $("#"+sqrId).text(turn);
-        turn = (turn == user) ? computer : user;
-    })
-});
-*/
+function gameOver(gameWon) {
+    for (let index of winCombos[gameWon.index]) {
+        document.getElementById(index).style.backgroundColor =
+            gameWon.player == player ? "blue" : "red";
+    }
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].removeEventListener('click', turnClick. false);
+    }
+}
+
