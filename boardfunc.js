@@ -1,4 +1,6 @@
 var origBoard;
+
+
 const huPlayer = 'O';
 const aiPlayer = 'X';
 const winCombos = [
@@ -12,7 +14,9 @@ const winCombos = [
 	[6, 4, 2]
 ]
 
+
 const cells = document.querySelectorAll('.cell');
+
 startGame();
 
 function startGame() {
